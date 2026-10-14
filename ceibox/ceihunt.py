@@ -294,7 +294,7 @@ def exportm(textwrite):
 	if textwrite == "export":
 		exports2port(dat)
 def cardz(c2, c4):
-	cardl = ["Fire Trex", "Water Trex", "Steel Trex","Thunder Trex"] #placeholder intro cards, to be replaced by live update
+	cardl = ["Arcane Wizard", "Celestial Dragon", "Halbred Paladin","Aether Bound Squire"] #placeholder intro cards, to be replaced by live update
 	c2 += 2
 	if c2 >= 0 and c2 <= 4:
 		cmod = c2 * 100
