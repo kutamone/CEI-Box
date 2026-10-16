@@ -307,9 +307,6 @@ def cardz(c2, c4):
 			cardlshow = font.render(cardl[i], True, dat['color2'])
 		screen.blit(cardlshow,(25,ymod + 25))
 #basic loading stuff
-with open("cardlistpc.txt","r") as file:
-	for line in file:
-		cardl.append(line.strip('\n'))
 with open("fmonth1.csv","r") as file:
 	csvr = csv.DictReader(file)
 	for line in csvr:
