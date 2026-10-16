@@ -199,29 +199,33 @@ def data(runtot, tme, monthincome, monthrecur, c3):
 		screen.blit(projline3, (20,200))
 		screen.blit(projline4, (20,250))
 	if c3 == 2:
-		qrtrtitle = font.render("Quarterly P/L", True, dat['color2'])
-		qrtrline1 = font.render(f'0', True, dat['color2'])
-		rectangleadd = 250
-		for i in range(0,len(qpl)):
-			y = (i * 50) + 100 #some math
-			if qpl[i] < 0:
-				x = 150 + qpl[i]
-				rawnum = qpl[i] * -1
-				pygame.draw.rect(screen,dat['color2'],(x,y,rawnum,20))
-				qrtrtag = font.render(f'{qpl[i]}',True,dat['color2'])
-				screen.blit(qrtrtag, (x-40,y))
-			else:
-				x = 150
-				tagpos = qpl[i] + x + 25
-				pygame.draw.rect(screen, dat['color2'],(x,y,qpl[i],20))
-				qrtrtag = font.render(f'{qpl[i]}',True,dat['color2'])
-				screen.blit(qrtrtag, (tagpos,y))
-		qrtrline2 = font.render(f'Monthly Avg P/L: {sum(mprofit)/len(mprofit)}', True, dat['color2'])
-		qrtrline3 = font.render(f'Total Gain (Including Monthly): {sum(mprofit)}',True,dat['color2'])
-		screen.blit(qrtrtitle, (195,25))
-		screen.blit(qrtrline1, (250,50))
-		screen.blit(qrtrline2, (20,300))
-		screen.blit(qrtrline3, (20,350))
+		try:
+			qrtrtitle = font.render("Quarterly P/L", True, dat['color2'])
+			qrtrline1 = font.render(f'0', True, dat['color2'])
+			rectangleadd = 250
+			for i in range(0,len(qpl)):
+				y = (i * 50) + 100 #some math
+				if qpl[i] < 0:
+					x = 150 + qpl[i]
+					rawnum = qpl[i] * -1
+					pygame.draw.rect(screen,dat['color2'],(x,y,rawnum,20))
+					qrtrtag = font.render(f'{qpl[i]}',True,dat['color2'])
+					screen.blit(qrtrtag, (x-40,y))
+				else:
+					x = 150
+					tagpos = qpl[i] + x + 25
+					pygame.draw.rect(screen, dat['color2'],(x,y,qpl[i],20))
+					qrtrtag = font.render(f'{qpl[i]}',True,dat['color2'])
+					screen.blit(qrtrtag, (tagpos,y))
+			qrtrline2 = font.render(f'Monthly Avg P/L: {sum(mprofit)/len(mprofit)}', True, dat['color2'])
+			qrtrline3 = font.render(f'Total Gain (Including Monthly): {sum(mprofit)}',True,dat['color2'])
+			screen.blit(qrtrtitle, (195,25))
+			screen.blit(qrtrline1, (250,50))
+			screen.blit(qrtrline2, (20,300))
+			screen.blit(qrtrline3, (20,350))
+		except ZeroDivisionError as e:
+			c3 = 1
+			pass
 	#checks to make sure all entries in fmonth1 and tmonth1 are from the current month
 	for line in fullstrline:
 		if dte != int(line[5:7]):
