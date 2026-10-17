@@ -16,8 +16,8 @@ def outofbox():
 		graphtitle2 = input("Enter graph title 2 name (Monthly Cost): ")
 		graphtitle3 = input("Enter graph title 3 name (Monthly [Primary Spending Category]): ")
 		print("For automatic exports to work, provide the file path to the month folder")
-  print("For your convenience, the month folder is automatically detected by utilizing this file's location as the current working directory")
-  print("Simply, reply n to the following question to set the month folder's filepath automatically")
+    print("For your convenience, the month folder is automatically detected by utilizing this file's location as the current working directory")
+    print("Simply, reply n to the following question to set the month folder's filepath automatically")
 		finput = input("Would you like to manually input filepath to month folder? [y/n]: ")
 		if finput == "y":
 			print("ex:[/home/thomas/program/liquidwrld2/month/]")
