@@ -291,9 +291,9 @@ def exports2port(dat):
 		wipe = input("Would you like to reset fmonth1.csv and tmonth1.csv? [y/n]: ")
 		if wipe == 'y':
 			with open('fmonth1.csv','w') as f:
-				f.write('Date,TransactionName,Cost')
+				f.write('Date,TransactionName,Cost\n')
 			with open('tmonth1.csv','w') as f:
-				f.write('Date,TransactionName,Cost')
+				f.write('Date,TransactionName,Cost\n')
 def exportm(textwrite):
 	if textwrite == "export":
 		exports2port(dat)
